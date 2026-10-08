@@ -1,0 +1,5 @@
+*.md
+.netlify/
+.git/
+functions-internal/
+v1/

@@ -1,0 +1,109 @@
+===[S5] 优惠券列表：筛选 / 搜索 / 分页 / 跳券模板===
+面包屑(复核): 活动中心›优惠券中心›优惠券管理
+每页20后行数: 14 | 分页: ‹1›共 14 条每页显示102050条
+状态=草稿后行数: 1 | 首行: 1新客专享减30配置/批次草稿新客首单满200元立减30元定额券¥20.00¥100.00无折扣上限00单次使用2026/09/12领取后7个自然日详情
+关键词"客服"后行数: 2 | 首行: 1客服补发满500减100配置/批次生效中可复用人工发券规则的配置示例定额券¥100.00¥500.00无折扣上限1414单次使用2026/09/102026/09/01—2026/09/30详情停用
+点"券模板管理"后 hash: #templates | 面包屑: 活动中心›优惠券中心›优惠券管理›券模板
+
+===[S6] 券模板列表 / 新建模板 / 默认模板编辑 / 锁定拦截===
+工具栏与页签: button{templates:券模板} button{issuance-rules:发放规则} button{open-template-form:＋ 新建券模板} input{q:} button{:搜索}
+筛选控件: q=
+HEADS: 序号 | 券模板名称 | 来源 | 适用范围 | 优惠券描述 | 优惠券类型 | 优惠金额 | 最低消费 | 最大折扣金额 | 使用方式 | 有效期 | 操作
+  ROWS(9):
+   1 ~ 新客首单减20⌑ ~ 默认预设 ~ 服务：陪玩、陪练 ~ 首次成为本俱乐部新客时到账，仅首单可用。 ~ 定额券 ~ ¥20.00 ~ ¥100.00 ~ 无折扣上限 ~ 单次使用 ~ 领取后7个自然日 ~ 编辑由模板新增
+   2 ~ 满500减100⌑ ~ 默认预设 ~ 游戏：王者荣耀、和平精英 ~ 订单服务金额满 500 元可使用。 ~ 定额券 ~ ¥100.00 ~ ¥500.00 ~ 无折扣上限 ~ 单次使用 ~ 2026/09/01—2026/09/30 ~ 编辑由模板新增
+   3 ~ 全场8折券⌑ ~ 默认预设 ~ 服务：陪玩 ~ 订单服务金额 8 折，单次最多优惠 50 元。 ~ 折扣券 ~ 80.00% ~ 无门槛 ~ ¥50.00 ~ 单次使用 ~ 领取后15个自然日 ~ 编辑由模板新增
+   4 ~ 周年庆立减30⌑ ~ 默认预设 ~ 游戏：王者荣耀 · 服务：陪玩 ~ 周年庆期间使用，指定游戏和服务类型可用。 ~ 定额券 ~ ¥30.00 ~ ¥200.00 ~ 无折扣上限 ~ 单次使用 ~ 2026/11/01—2026/11/11 ~ 编辑由模板新增
+   5 ~ 充值赠10元 ~ 自定义模板 ~ 全俱乐部 ~ 充值活动达档后到账，可用于下一笔服务订单。 ~ 定额券 ~ ¥10.00 ~ 无门槛 ~ 无折扣上限 ~ 最多使用2次 · 每次¥5.00 ~ 领取后30个自然日 ~ 编辑由模板新增删除
+   6 ~ 王者荣耀陪玩立减15 ~ 自定义模板 ~ 游戏：王者荣耀 · 服务：陪玩 ~ 王者荣耀陪玩订单满 80 元可用。 ~ 定额券 ~ ¥15.00 ~ ¥80.00 ~ 无折扣上限 ~ 单次使用 ~ 领取后14个自然日 ~ 编辑由模板新增删除
+   7 ~ 充值回流8折券 ~ 自定义模板 ~ 全俱乐部 ~ 充值用户回流时可用，单次最高优惠 30 元。 ~ 折扣券 ~ 80.00% ~ ¥100.00 ~ ¥30.00 ~ 单次使用 ~ 领取后15个自然日 ~ 编辑由模板新增删除
+   8 ~ 和平精英陪练余额券50 ~ 自定义模板 ~ 游戏：和平精英 · 服务：陪练 ~ 和平精英陪练订单满 200 元可用，可分 5 次抵扣。 ~ 定额券 ~ ¥50.00 ~ ¥200.00 ~ 无折扣上限 ~ 最多使用5次 · 每次¥10.00 ~ 领取后30个自然日 ~ 编辑由模板新增删除
+   9 ~ 英雄联盟新客减30 ~ 自定义模板 ~ 游戏：英雄联盟手游 · 服务：代练 ~ 英雄联盟手游新客首单满 150 元减 30 元。 ~ 定额券 ~ ¥30.00 ~ ¥150.00 ~ 无折扣上限 ~ 单次使用 ~ 2026/10/10—2026/10/31 ~ 编辑由模板新增删除
+第1行(默认模板)操作: 编辑[template-edit] | 由模板新增[template-create-coupon]
+第6行(自定义)操作: 编辑[template-edit] | 由模板新增[template-create-coupon] | 删除[template-delete]
+--新建券模板弹窗--
+MODAL "新建券模板" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] | 领取后 N 天[coupon-validity] | 固定日期[coupon-validity] …共16个按钮
+  FIELDS: name= | amount=20 | threshold=0 | description= | validDays=7 | eligibility=unlimited
+  HIDDEN: preset= | templateId= | calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory= | scopeProduct=
+--不选预设直接保存（校验）--
+toast: 请填写券模板名称
+  !! 不存在: [data-action="template-preset"][data-preset="discount"]
+--选折扣券预设后--
+MODAL "新建券模板" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] | 领取后 N 天[coupon-validity] | 固定日期[coupon-validity] …共16个按钮
+  FIELDS: name=闭环测试模板Z | amount=20 | threshold=0 | description= | validDays=7 | eligibility=unlimited
+  HIDDEN: preset= | templateId= | calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory= | scopeProduct=
+保存模板 toast: 券模板已保存 | hash: #templates
+列表行数: 10 | 新首行: 1闭环测试模板Z自定义模板全俱乐部-定额券¥20.00¥100.00无折扣上限单次使用领取后7个自然日编辑由模板新增删除
+--编辑默认模板弹窗--
+MODAL "编辑默认模板" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天✓ 已选择[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] …共18个按钮
+  FIELDS: name=新客首单减20 | amount=20 | threshold=100 | description=首次成为本俱乐部新客时到账，仅首单可用。 | validDays=7 | eligibility=first_order
+  HIDDEN: preset=new | templateId= | calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory=竞技陪玩 | scopeProduct= | scopeGame= | scopeCategory=技能陪练 | scopeProduct=
+使用此配置后 hash: #coupon-create-form | 面包屑: 活动中心›优惠券中心›优惠券管理›新增优惠券 | 有表单: 1
+
+===[S7] 由模板新增 → 发布（检查能否闭环）===
+  !! 不存在: .toolbar [data-route="templates"]
+  !! 无匹配: [data-action="template-create-coupon"][data-id="tpl-custom-king"]
+弹窗: (无弹窗)
+--点发布后 toast: 已带入优惠券配置，默认模板保持不变 | 有确认弹窗: ×是否另存为模板？保存并发布前，可以将当前优惠券配置另存为自定义券模板，方便后续复用。直接保存并发布另存为模板并发布
+发布结果 toast: 新客或充值优惠券发布前至少关联一个活动 | hash: #coupon-create-form
+
+===[S8] 发放规则：列表 / 新增 / 校验 / 详情 / 关联 / 停用===
+  !! 不存在: .coupon-management-tab[data-route="issuance-rules"]
+hash: #coupon-create-form | 面包屑: 活动中心›优惠券中心›优惠券管理›新增优惠券
+工具栏: button{coupon-form:返回优惠券列表}
+(no scope)
+第1行操作: 
+  !! 不存在: [data-action="issuance-new"]
+新建规则页 hash: #coupon-create-form | 字段: 
+  !! 输入不存在: form[data-form="issuance-rule"] input[name="name"]
+  !! 表单不存在: form[data-form="issuance-rule"]
+空名称 toast: 新客或充值优惠券发布前至少关联一个活动
+  !! 输入不存在: form[data-form="issuance-rule"] input[name="name"]
+  !! 表单不存在: form[data-form="issuance-rule"]
+保存 toast: 新客或充值优惠券发布前至少关联一个活动 | hash: #coupon-create-form | 面包屑: 活动中心›优惠券中心›优惠券管理›新增优惠券
+详情页操作: 
+详情页字段区: 
+关联优惠券表首行: 
+行内操作(关联模式): 
+  !! 无匹配: .coupon-table tbody tr [data-action="select-associated-coupon"]
+选择后 toast: 新客或充值优惠券发布前至少关联一个活动 | hash: #coupon-create-form
+  !! 不存在: [data-action="issuance-stop"]
+停用确认: 活动中心 / 优惠券中心 / 优惠券列表新增优惠券按券类型、规则和活动完成优惠券配置。×① 选择券模板选择一个模板，自动带入下方高级设置已选择模板只是快捷配置入口，保存后的真实规则仍以优惠计算方式、顾客资格和适用范围为准。🎁新客券仅首单可用 · 领取后 7 天✓ 已选择💰满减券满 X 减 Y · 领取后 7 天🏷️折扣券打折并封顶 · 领取后 15 天🎉节日券指定日期使用 · 节日场景🧩自定义模板选择已保存的自定义券模板 ② 填写基本信息优惠券展示给运营和顾客的基础内容 优惠券名称* 优惠面额*¥ 使用门槛元，0 表示无门槛 优惠券描述 ✓已自动设置：固定减免 20 元，满 100 
+  !! 不存在: #modal-root [data-action="confirm-modal"]
+停用后 toast: 新客或充值优惠券发布前至少关联一个活动 | 标题区: 
+  !! 不存在: [data-route="issuance-rules"]
+规则列表首行状态: 
+
+===[S9] 折扣券：可多次使用开关 / 用户资格取值===
+  !! 不存在: .toolbar [data-route="templates"]
+  !! 不存在: .toolbar [data-route="coupon-form"]
+  !! 不存在: [data-action="open-coupon-create"]
+MODAL "新增优惠券" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天✓ 已选择[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] …共22个按钮
+  FIELDS: name=闭环测试券C | discountRate=80 | maxDiscount=50 | threshold=0 | description= | validDays=15 | eligibility=unlimited
+  HIDDEN: preset=discount | templateId=tpl-discount | calcMethod=discount | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory=竞技陪玩 | scopeProduct= | scopeGame= | scopeCategory=技能陪练 | scopeProduct=
+可多次使用按钮 disabled: true | 用户资格选项: 首单客户 / 新客客户（模拟） / 回流客户（模拟） / 高价值客户（模拟） / 全部客户
+门槛为0发布: toast=新客或充值优惠券发布前至少关联一个活动 | hash=#coupon-create-form | 有无确认弹窗=1
+
+===[S10] 定额券多次使用：次数/整除校验===
+toggle 后 maxUses 字段存在: 0
+--开启可多次使用--
+MODAL "新增优惠券" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天✓ 已选择[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] …共22个按钮
+  FIELDS: name=闭环测试折扣券 | amount=100 | threshold=500 | description= | validDays=7 | maxUses=2 | eligibility=unlimited
+  HIDDEN: preset=threshold | templateId=tpl-threshold | calcMethod=fixed | validityMode=relative | usageMode=multi | stackable=false | scopeGame= | scopeCategory=竞技陪玩 | scopeProduct= | scopeGame= | scopeCategory=技能陪练 | scopeProduct=
+100/3 存草稿 toast: 优惠金额必须能被最大使用次数整除，每次使用额度需为整数
+100/4 存草稿 toast: 优惠券配置草稿已保存 | hash: #coupon-form
+
+===[S11] 死入口统计（各页面）===
+  页面 #coupon-form → coupon-execute-manual=0, coupon-records=0, coupon-config-publish=0, coupon-edit=0, associate-rule=0, associate-activities=0, template-from-activity=0 | 行内按钮类型=coupon-detail,coupon-config-stop,coupon-config-enable
+  页面 #templates → coupon-execute-manual=0, coupon-records=0, coupon-config-publish=0, coupon-edit=0, associate-rule=0, associate-activities=0, template-from-activity=0 | 行内按钮类型=template-edit,template-create-coupon,template-delete
+  页面 #issuance-rules → coupon-execute-manual=0, coupon-records=0, coupon-config-publish=0, coupon-edit=0, associate-rule=0, associate-activities=0, template-from-activity=0 | 行内按钮类型=issuance-detail,issuance-edit,issuance-stop,issuance-records

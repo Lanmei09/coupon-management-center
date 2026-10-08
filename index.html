@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一期营销活动中心后台管理端原型">
+  <title>活动中心 · 优惠券管理中心后台原型</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="backend-shell" class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">星</div>
+        <div>
+          <div class="brand-name">星域后台管理系统</div>
+          <div class="brand-sub">优惠券管理中心 · 专项 A</div>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="活动中心导航">
+        <div class="nav-root-title">活动中心</div>
+        <div class="nav-group">
+          <div class="nav-group-title">优惠券管理中心</div>
+          <button class="nav-item" data-route="coupon-form"><span class="nav-icon">▤</span><span>优惠券管理</span></button>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">活动管理中心</div>
+          <button class="nav-item active" data-route="activities"><span class="nav-icon">◈</span><span>储值活动</span></button>
+          <button class="nav-item" data-route="activity-other"><span class="nav-icon">◇</span><span>常规活动</span></button>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">发放管理中心</div>
+          <button class="nav-item" data-route="distribution-management"><span class="nav-icon">▣</span><span>发放管理</span></button>
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-title">数据与记录</div>
+          <button class="nav-item" data-route="dashboard"><span class="nav-icon">◒</span><span>优惠券看板</span></button>
+          <button class="nav-item" data-route="records"><span class="nav-icon">≡</span><span>发放与核销记录</span><span class="nav-count">4</span></button>
+        </div>
+      </nav>
+
+      <div class="surface-switcher" id="surface-switcher" aria-label="原型端切换">
+        <div class="surface-switcher-brand"><span class="brand-mark">星</span><strong>星域小程序端</strong></div>
+        <div class="surface-switcher-title">产品端</div>
+        <div class="surface-switcher-tabs">
+          <button type="button" class="surface-tab" data-route="customer-miniapp">顾客小程序端</button>
+          <div class="surface-customer-subnav" aria-label="顾客小程序端页面">
+            <button type="button" class="surface-customer-item" data-action="customer-miniapp-tab" data-tab="claim">🎁 <span>领券中心</span></button>
+            <button type="button" class="surface-customer-item" data-action="customer-miniapp-tab" data-tab="recharge">💰 <span>充值页（活动提示）</span></button>
+            <button type="button" class="surface-customer-item" data-action="customer-miniapp-tab" data-tab="checkout">🧾 <span>下单结算选券</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-foot">
+        <button class="reset-link" data-action="reset">↻ 重置演示数据</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb" id="breadcrumb" aria-label="当前位置"></div>
+        <div class="top-actions">
+          <span class="top-divider"></span>
+          <div class="user-avatar">管</div>
+          <div class="user-name">Lanmei <span>⌄</span></div>
+        </div>
+      </header>
+
+      <div id="app-view" class="view-content"></div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="modal-root"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

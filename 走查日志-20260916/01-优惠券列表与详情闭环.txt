@@ -1,0 +1,124 @@
+===[S1] 优惠券列表基线 #coupon-form===
+面包屑: 活动中心›优惠券中心›优惠券管理
+侧边栏激活项: ▤优惠券管理
+工具栏: button{open-coupon-create:＋ 新增优惠券} button{templates:券模板管理} input{q:} button{:搜索} select{coupon-status:all}
+HEADS: 序号 | 优惠券名称 | 状态 | 优惠券描述 | 优惠券类型 | 优惠金额 | 最低消费 | 最大折扣金额 | 已发行数量 | 可用优惠券数 | 使用方式 | 创建时间 | 到期时间 | 操作
+  ROWS(10):
+   1 ~ 新客首单减20配置/批次 ~ 生效中 ~ 新客活动使用的优惠券配置 ~ 定额券 ~ ¥20.00 ~ ¥100.00 ~ 无折扣上限 ~ 128 ~ 64 ~ 单次使用 ~ 2026/08/28 ~ 领取后7个自然日 ~ 详情停用
+   2 ~ 秋季充值回馈券配置/批次 ~ 生效中 ~ 充值活动按最高档赠送 ~ 定额券 ~ ¥10.00 ~ 无门槛 ~ 无折扣上限 ~ 91 ~ 53 ~ 最多使用2次 · 每次¥5.00 ~ 2026/09/01 ~ 领取后30个自然日 ~ 详情停用
+   3 ~ 周年庆立减30券配置/批次 ~ 生效中 ~ 节日场景下主动领取的优惠券配置 ~ 定额券 ~ ¥30.00 ~ ¥200.00 ~ 无折扣上限 ~ 73 ~ 51 ~ 单次使用 ~ 2026/09/08 ~ 2026/11/01—2026/11/11 ~ 详情停用
+   4 ~ 客服补发满500减100配置/批次 ~ 生效中 ~ 可复用人工发券规则的配置示例 ~ 定额券 ~ ¥100.00 ~ ¥500.00 ~ 无折扣上限 ~ 14 ~ 14 ~ 单次使用 ~ 2026/09/10 ~ 2026/09/01—2026/09/30 ~ 详情停用
+   5 ~ 新客欢迎减10配置/批次 ~ 生效中 ~ 新客注册后首单可使用的优惠券 ~ 定额券 ~ ¥20.00 ~ ¥100.00 ~ 无折扣上限 ~ 56 ~ 42 ~ 单次使用 ~ 2026/09/11 ~ 领取后7个自然日 ~ 详情停用
+   6 ~ 新客专享减30配置/批次 ~ 草稿 ~ 新客首单满200元立减30元 ~ 定额券 ~ ¥20.00 ~ ¥100.00 ~ 无折扣上限 ~ 0 ~ 0 ~ 单次使用 ~ 2026/09/12 ~ 领取后7个自然日 ~ 详情
+   7 ~ 充值赠15元配置/批次 ~ 生效中 ~ 充值达到指定档位后赠送15元优惠券 ~ 定额券 ~ ¥10.00 ~ 无门槛 ~ 无折扣上限 ~ 64 ~ 39 ~ 最多使用2次 · 每次¥5.00 ~ 2026/09/06 ~ 领取后30个自然日 ~ 详情停用
+   8 ~ 充值满300赠20配置/批次 ~ 生效中 ~ 单笔充值满300元赠送20元优惠券 ~ 定额券 ~ ¥10.00 ~ 无门槛 ~ 无折扣上限 ~ 38 ~ 26 ~ 最多使用2次 · 每次¥5.00 ~ 2026/09/07 ~ 领取后30个自然日 ~ 详情停用
+   9 ~ 充值回流8折券配置/批次 ~ 已停用 ~ 充值用户回流场景可使用的折扣券 ~ 折扣券 ~ 80.00% ~ 无门槛 ~ ¥50.00 ~ 27 ~ 0 ~ 单次使用 ~ 2026/08/30 ~ 领取后15个自然日 ~ 详情启用
+   10 ~ 首页主动领8折配置/批次 ~ 生效中 ~ 顾客从首页主动领取的限时折扣券 ~ 折扣券 ~ 80.00% ~ 无门槛 ~ ¥50.00 ~ 44 ~ 32 ~ 单次使用 ~ 2026/09/09 ~ 领取后15个自然日 ~ 详情停用
+分页: ‹12›共 14 条每页显示102050条
+筛选 select 数量: 1 → coupon-status
+按行操作按钮: 详情[coupon-detail] | 停用[coupon-config-stop]
+
+===[S2] 新增优惠券（选"满减券"预设）===
+MODAL "新增优惠券" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置 | 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] | 领取后 N 天[coupon-validity] | 固定日期[coupon-validity] | [coupon-usage] | [coupon-stackable] | 全部游戏[scope-option] | 王者荣耀[scope-option] | 全部分类[scope-option] | 竞技陪玩[scope-option] | 全部商品[scope-option] | 排位上分[scope-option] | 巅峰赛组队[scope-option] | 技能陪练[scope-option] | 全部商品[scope-option] | 英雄连招练习[scope-option] | 补位训练[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲刺[scope-option] | 无畏契约[scope-option] | 全部分类[scope-option] | 排位陪玩[scope-option] | 全部商品[scope-option] | 竞技排位局[scope-option] | 爆头训练房[scope-option] | 枪法陪练[scope-option] | 全部商品[scope-option] | 步枪练习[scope-option] | 狙击练习[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季代打[scope-option] | 和平精英[scope-option] | 全部分类[scope-option] | 组队陪玩[scope-option] | 全部商品[scope-option] | 经典海岛[scope-option] | 特训岛[scope-option] | 战术陪练[scope-option] | 全部商品[scope-option] | 枪法训练[scope-option] | 战术指导[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲分[scope-option] | 删除[scope-remove] | ＋ 添加适用范围[scope-add] | 取消 | 保存草稿 | 另存为模板[save-coupon-as-template] | 保存并发布[save-coupon]
+  VISIBLE FIELDS: name= | amount=20 | threshold=100 | description= | validDays=7 | input= | eligibility=first_order
+  HIDDEN: preset= | templateId= | calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory= | scopeProduct=
+预设卡: 🎁新客券仅首单可用 · 领取后 7 天 / 💰满减券满 X 减 Y · 领取后 7 天 / 🏷️折扣券打折并封顶 · 领取后 15 天 / 🎉节日券指定日期使用 · 节日场景 / 🧩自定义模板选择已保存的自定义券模板
+--点击"满减券"预设后--
+MODAL "新增优惠券" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置 | 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天✓ 已选择[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] | 领取后 N 天[coupon-validity] | 固定日期[coupon-validity] | [coupon-usage] | [coupon-stackable] | 全部游戏[scope-option] | 王者荣耀[scope-option] | 全部分类[scope-option] | 竞技陪玩[scope-option] | 全部商品[scope-option] | 排位上分[scope-option] | 巅峰赛组队[scope-option] | 技能陪练[scope-option] | 全部商品[scope-option] | 英雄连招练习[scope-option] | 补位训练[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲刺[scope-option] | 无畏契约[scope-option] | 全部分类[scope-option] | 排位陪玩[scope-option] | 全部商品[scope-option] | 竞技排位局[scope-option] | 爆头训练房[scope-option] | 枪法陪练[scope-option] | 全部商品[scope-option] | 步枪练习[scope-option] | 狙击练习[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季代打[scope-option] | 和平精英[scope-option] | 全部分类[scope-option] | 组队陪玩[scope-option] | 全部商品[scope-option] | 经典海岛[scope-option] | 特训岛[scope-option] | 战术陪练[scope-option] | 全部商品[scope-option] | 枪法训练[scope-option] | 战术指导[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲分[scope-option] | 删除[scope-remove] | ＋ 添加适用范围[scope-add] | 取消 | 保存草稿 | 另存为模板[save-coupon-as-template] | 保存并发布[save-coupon]
+  VISIBLE FIELDS: name= | amount=100 | threshold=500 | description= | validDays=7 | input= | eligibility=unlimited
+  HIDDEN: preset=threshold | templateId=tpl-threshold | calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory= | scopeProduct=
+--空名称直接存草稿（校验测试）--
+toast: 请填写优惠券名称 | hash: #coupon-form
+--填名称后存草稿--
+toast: 优惠券配置草稿已保存 | hash: #coupon-form
+列表第一行: 1闭环测试券A配置/批次草稿-定额券¥100.00¥500.00无折扣上限00单次使用2026/09/14领取后7个自然日详情
+列表行数: 10
+  !! 元素不存在: [data-filter="coupon-page-size"] option[value="50"] option
+
+===[S3] 新配置 详情→编辑→发布===
+MODAL "优惠券详情" readonly=true
+  SECTIONS: 填写基本信息 | 高级设置 | 高级设置
+  BUTTONS: ×[close-modal] | 定额券[coupon-calc](disabled) | 折扣券[coupon-calc](disabled) | 领取后 N 天[coupon-validity](disabled) | 固定日期[coupon-validity](disabled) | [coupon-usage](disabled) | [coupon-stackable](disabled) | 全部游戏[scope-option] | 王者荣耀[scope-option] | 全部分类[scope-option] | 竞技陪玩[scope-option] | 全部商品[scope-option] | 排位上分[scope-option] | 巅峰赛组队[scope-option] | 技能陪练[scope-option] | 全部商品[scope-option] | 英雄连招练习[scope-option] | 补位训练[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲刺[scope-option] | 无畏契约[scope-option] | 全部分类[scope-option] | 排位陪玩[scope-option] | 全部商品[scope-option] | 竞技排位局[scope-option] | 爆头训练房[scope-option] | 枪法陪练[scope-option] | 全部商品[scope-option] | 步枪练习[scope-option] | 狙击练习[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季代打[scope-option] | 和平精英[scope-option] | 全部分类[scope-option] | 组队陪玩[scope-option] | 全部商品[scope-option] | 经典海岛[scope-option] | 特训岛[scope-option] | 战术陪练[scope-option] | 全部商品[scope-option] | 枪法训练[scope-option] | 战术指导[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲分[scope-option] | 删除[scope-remove](disabled) | ＋ 添加适用范围[scope-add](disabled) | 取消[close-modal] | 编辑[coupon-enter-edit]
+  VISIBLE FIELDS: name=闭环测试券A(disabled) | amount=100(disabled) | threshold=500(disabled) | description=(disabled) | validDays=7(disabled) | input=(disabled) | eligibility=unlimited(disabled)
+  HIDDEN: calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory= | scopeProduct=
+弹窗内是否有"关联发放规则/关联活动"控件: ruleId=0, activityIds=0
+详情弹窗内按钮含人工发券/关联流水: 人工发券=0, 关联流水=0
+--点"编辑"后--
+MODAL "优惠券详情" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置 | 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天✓ 已选择[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] | 领取后 N 天[coupon-validity] | 固定日期[coupon-validity] | [coupon-usage] | [coupon-stackable] | 全部游戏[scope-option] | 王者荣耀[scope-option] | 全部分类[scope-option] | 竞技陪玩[scope-option] | 全部商品[scope-option] | 排位上分[scope-option] | 巅峰赛组队[scope-option] | 技能陪练[scope-option] | 全部商品[scope-option] | 英雄连招练习[scope-option] | 补位训练[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲刺[scope-option] | 无畏契约[scope-option] | 全部分类[scope-option] | 排位陪玩[scope-option] | 全部商品[scope-option] | 竞技排位局[scope-option] | 爆头训练房[scope-option] | 枪法陪练[scope-option] | 全部商品[scope-option] | 步枪练习[scope-option] | 狙击练习[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季代打[scope-option] | 和平精英[scope-option] | 全部分类[scope-option] | 组队陪玩[scope-option] | 全部商品[scope-option] | 经典海岛[scope-option] | 特训岛[scope-option] | 战术陪练[scope-option] | 全部商品[scope-option] | 枪法训练[scope-option] | 战术指导[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲分[scope-option] | 删除[scope-remove] | ＋ 添加适用范围[scope-add] | 取消[coupon-cancel-edit] | 保存修改 | 另存为模板[save-coupon-as-template] | 保存并生效[save-coupon]
+  VISIBLE FIELDS: name=闭环测试券A | amount=100 | threshold=500 | description= | validDays=7 | input= | eligibility=unlimited
+  HIDDEN: preset=threshold | templateId=tpl-threshold | calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory= | scopeProduct=
+--点"保存并生效/发布"后--
+MODAL "编辑优惠券配置" readonly=false
+  SECTIONS: ① 选择券模板 | ② 填写基本信息 | ③ 高级设置 | 高级设置
+  BUTTONS: ×[close-modal] | 🎁新客券仅首单可用 · 领取后 7 天[coupon-preset] | 💰满减券满 X 减 Y · 领取后 7 天✓ 已选择[coupon-preset] | 🏷️折扣券打折并封顶 · 领取后 15 天[coupon-preset] | 🎉节日券指定日期使用 · 节日场景[coupon-preset] | 🧩自定义模板选择已保存的自定义券模板[coupon-preset] | 定额券[coupon-calc] | 折扣券[coupon-calc] | 领取后 N 天[coupon-validity] | 固定日期[coupon-validity] | [coupon-usage] | [coupon-stackable] | 全部游戏[scope-option] | 王者荣耀[scope-option] | 全部分类[scope-option] | 竞技陪玩[scope-option] | 全部商品[scope-option] | 排位上分[scope-option] | 巅峰赛组队[scope-option] | 技能陪练[scope-option] | 全部商品[scope-option] | 英雄连招练习[scope-option] | 补位训练[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲刺[scope-option] | 无畏契约[scope-option] | 全部分类[scope-option] | 排位陪玩[scope-option] | 全部商品[scope-option] | 竞技排位局[scope-option] | 爆头训练房[scope-option] | 枪法陪练[scope-option] | 全部商品[scope-option] | 步枪练习[scope-option] | 狙击练习[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季代打[scope-option] | 和平精英[scope-option] | 全部分类[scope-option] | 组队陪玩[scope-option] | 全部商品[scope-option] | 经典海岛[scope-option] | 特训岛[scope-option] | 战术陪练[scope-option] | 全部商品[scope-option] | 枪法训练[scope-option] | 战术指导[scope-option] | 代练服务[scope-option] | 全部商品[scope-option] | 段位代练[scope-option] | 赛季冲分[scope-option] | 删除[scope-remove] | ＋ 添加适用范围[scope-add] | 取消[coupon-cancel-edit] | 保存修改 | 另存为模板[save-coupon-as-template] | 保存并生效[save-coupon] | ×[coupon-publish-dismiss] | 直接保存并发布[coupon-publish-without-template] | 另存为模板并发布[coupon-publish-with-template]
+  VISIBLE FIELDS: name=闭环测试券A | amount=100 | threshold=500 | description= | validDays=7 | input= | eligibility=unlimited
+  HIDDEN: preset=threshold | templateId=tpl-threshold | calcMethod=fixed | validityMode=relative | usageMode=single | stackable=false | scopeGame= | scopeCategory= | scopeProduct=
+toast: 优惠券配置已发布 | hash: #coupon-form
+列表第一行: 1闭环测试券A配置/批次生效中-定额券¥100.00¥500.00无折扣上限00单次使用2026/09/14领取后7个自然日详情停用
+
+===[S4] 停用 / 启用闭环===
+第一行操作按钮: 详情[coupon-detail] | 停用[coupon-config-stop]
+确认弹窗: MODAL "停用这个优惠券配置？" readonly=false
+  SECTIONS: 
+  BUTTONS: 取消[close-modal] | 确认[confirm-modal]
+  VISIBLE FIELDS: (无)
+  HIDDEN: (无)
+toast: 优惠券配置已停用
+第一行状态: 已停用
+启用 toast: 优惠券配置已启用 | 状态: 生效中
+
+===[S5] 券模板列表 → 由模板新增 → 发布===
+  !! 元素不存在: .coupon-management-tab[data-route="templates"], [data-route="templates"].coupon-management-tab
+视图 hash: #coupon-form | 面包屑: 活动中心›优惠券中心›优惠券管理
+工具栏: button{open-coupon-create:＋ 新增优惠券} button{templates:券模板管理} input{q:} button{:搜索} select{coupon-status:all}
+(no scope)
+模板行操作: 
+  !! 无匹配元素: [data-action="template-create-coupon"]
+--由模板新增弹窗--
+(无弹窗)
+  !! 输入框不存在: form[data-form="coupon-config"] input[name="name"]
+  !! 表单不存在: form[data-form="coupon-config"]
+toast: 优惠券配置已启用 | hash: #coupon-form
+
+===[S6] 发放规则 新增→详情→停用===
+  !! 元素不存在: [data-route="issuance-rules"]
+面包屑: 活动中心›优惠券中心›优惠券管理
+工具栏: button{open-coupon-create:＋ 新增优惠券} button{templates:券模板管理} input{q:} button{:搜索} select{coupon-status:all}
+(no scope)
+规则行操作: 
+  !! 元素不存在: [data-action="issuance-new"]
+--新建规则页--
+面包屑: 活动中心›优惠券中心›优惠券管理
+字段: 
+  !! 表单不存在: form[data-form="issuance-rule"]
+清空名称后保存 toast: 优惠券配置已启用
+  !! 输入框不存在: form[data-form="issuance-rule"] input[name="name"]
+  !! 表单不存在: form[data-form="issuance-rule"]
+保存 toast: 优惠券配置已启用 | hash: #coupon-form | 面包屑: 活动中心›优惠券中心›优惠券管理
+详情页按钮: 
+  !! 元素不存在: [data-action="issuance-stop"]
+停用确认: 
+  !! 元素不存在: #modal-root [data-action="confirm-modal"]
+停用后 toast: 优惠券配置已启用 | 详情标题区: 
+
+===[S7] 发放规则"跳转优惠券列表选择"→关联===
+  !! 元素不存在: [data-route="issuance-rules"]
+  !! 无匹配元素: .issuance-table tbody tr [data-action="issuance-detail"]
+规则详情是否有"跳转优惠券列表选择": (无)
+
+===[S8] 入口与控件盘点（全站按钮统计）===
+  按钮 data-action=coupon-execute-manual → 当前页面出现 0 次
+  按钮 data-action=coupon-records → 当前页面出现 0 次
+  按钮 data-action=coupon-config-publish → 当前页面出现 0 次
+  按钮 data-action=coupon-edit → 当前页面出现 0 次
+  按钮 data-action=associate-rule → 当前页面出现 0 次
+  按钮 data-action=associate-activities → 当前页面出现 0 次
+  按钮 data-action=template-from-activity → 当前页面出现 0 次
+  全站唯一点击动作: reset,show-rules,open-coupon-create,coupon-detail,coupon-config-stop,coupon-config-enable,coupon-page-prev,coupon-page-number,coupon-page-next
+  优惠券列表的发放来源筛选是否存在: 0；模板筛选: 0

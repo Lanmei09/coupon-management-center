@@ -1,0 +1,105 @@
+===[S1] 储值活动列表 #activities===
+面包屑: 活动中心›活动管理中心›储值活动 | 侧栏激活: ◈储值活动
+工具栏: button{activity-create:＋ 新建储值活动} input{q:} button{:查询} select{activity-status:all}
+HEADS: 序号 | 活动名称 | 充值金额 | 状态 | 开始时间 | 结束时间 | 关联优惠券 | 操作
+  ROWS(10):
+   1 ~ 秋季充值回馈 ~ ¥500.00 ~ 进行中 ~ 2026/09/05 ~ 2026/10/15 ~ 4 个配置 ~ 详情复制并新建停用
+   2 ~ 新客储值礼 ~ ¥100.00 ~ 进行中 ~ 2026/09/10 ~ 2026/10/31 ~ 0 个配置 ~ 详情复制并新建停用
+   3 ~ 周末储值加赠 ~ ¥200.00 ~ 未开始 ~ 2026/09/19 ~ 2026/09/20 ~ 0 个配置 ~ 详情复制并新建
+   4 ~ 会员储值回馈 ~ ¥800.00 ~ 进行中 ~ 长期 ~ 长期 ~ 0 个配置 ~ 详情复制并新建停用
+   5 ~ 国庆储值礼 ~ ¥300.00 ~ 未开始 ~ 2026/10/01 ~ 2026/10/07 ~ 0 个配置 ~ 详情复制并新建
+   6 ~ 周中储值奖励 ~ ¥150.00 ~ 已结束 ~ 2026/08/10 ~ 2026/08/18 ~ 0 个配置 ~ 详情复制并新建
+   7 ~ 月末储值福利 ~ ¥600.00 ~ 进行中 ~ 2026/09/25 ~ 2026/09/30 ~ 0 个配置 ~ 详情复制并新建停用
+   8 ~ 新赛季储值加赠 ~ ¥1000.00 ~ 草稿 ~ 2026/10/08 ~ 2026/11/08 ~ 0 个配置 ~ 详情复制并新建删除
+   9 ~ 老客储值回馈 ~ ¥450.00 ~ 已停用 ~ 长期 ~ 长期 ~ 0 个配置 ~ 详情复制并新建启用
+   10 ~ 暑期充值礼 ~ ¥300.00 ~ 已结束 ~ 2026/07/01 ~ 2026/08/31 ~ 0 个配置 ~ 详情复制并新建
+第1行操作: 详情[activity-detail] | 复制并新建[activity-copy] | 停用[activity-stop]
+分页: ‹1›共 10 条每页显示102050条
+
+===[S2] 其他活动列表 #activity-other===
+面包屑: 活动中心›活动管理中心›其他活动 | 侧栏激活: ◇其他活动
+工具栏: button{other-activity-create:＋ 新建活动} input{q:} button{:查询} select{activity-status:all} select{activity-type:all} select{activity-trigger:all}
+HEADS: 序号 | 活动名称 | 触发方式 | 活动类型 | 状态 | 开始时间 | 结束时间 | 关联优惠券/CDK | 操作
+  ROWS(7):
+   1 ~ 新客首单礼 ~ 自动发放 ~ 新客活动 ~ 进行中 ~ 2026/09/01 ~ 2026/10/31 ~ 3 个配置 ~ 详情复制并新建停用
+   2 ~ 主页领券专区 ~ 主动领取 ~ 主动领券 ~ 未开始 ~ 2026/09/20 ~ 2026/10/20 ~ 2 个配置 ~ 详情复制并新建
+   3 ~ 国庆回流券（草稿） ~ 主动领取 ~ 主动领券 ~ 草稿 ~ 2026/10/01 ~ 2026/10/07 ~ 0 个配置 ~ 详情复制并新建删除
+   4 ~ 周末新客礼 ~ 自动发放 ~ 新客活动 ~ 进行中 ~ 2026/09/12 ~ 2026/09/30 ~ 0 个配置 ~ 详情复制并新建停用
+   5 ~ 周末领券专区 ~ 主动领取 ~ 主动领券 ~ 进行中 ~ 2026/09/26 ~ 2026/09/27 ~ 0 个配置 ~ 详情复制并新建停用
+   6 ~ 老客回流礼 ~ 自动发放 ~ 新客活动 ~ 已停用 ~ 长期 ~ 长期 ~ 0 个配置 ~ 详情复制并新建启用
+   7 ~ 月度主动领券 ~ 主动领取 ~ 主动领券 ~ 草稿 ~ 2026/10/01 ~ 2026/10/31 ~ 0 个配置 ~ 详情复制并新建删除
+第1行操作: 详情[activity-detail] | 复制并新建[activity-copy] | 停用[activity-stop]
+
+===[S3] 新建储值活动弹窗===
+MODAL "新建储值活动"  SECTIONS: 基本信息 | 规则信息 | 发放内容
+  BUTTONS: ×[close-modal] | 充值送券 | 自动发放 | 主动领取 | 手动发放 | CDK兑换 | −[activity-adjust-number] | ＋[activity-adjust-number] | ＋ 再加一种券[activity-add-coupon] | 取消[close-modal] | 保存草稿 | 发布活动[save-activity]
+  FIELDS: name= | description= | rechargeAmount= | input=(disabled) | input=(disabled) | qualificationKey=all | couponIds=coupon-002 | couponQuantities=1
+  CHECK: ✓ | limitReceive✗
+空名称保存 → toast: 请填写活动名称
+填名称+保存草稿 → toast: 活动草稿已保存 | hash: #activities
+列表首行: 1走查测试储值活动¥300.00草稿长期长期1 个配置详情复制并新建删除
+发布 → toast: 活动已发布，状态已更新 | 首行: 1走查测试发布活动¥500.00进行中长期长期1 个配置详情复制并新建停用
+
+===[S4] 新建其他活动（触发方式/关联CDK切换）===
+MODAL "新建活动"  SECTIONS: 基本信息 | 规则信息 | 发放内容
+  BUTTONS: ×[close-modal] | 自动发放[activity-trigger] | 主动领取[activity-trigger] | 手动发放[activity-trigger] | CDK兑换[activity-trigger] | 充值送券(disabled) | ＋ 再加一种券[activity-add-coupon] | 取消[close-modal] | 保存草稿 | 发布活动[save-activity]
+  FIELDS: name= | type=new_customer | description= | input=(disabled) | input=(disabled) | qualificationKey=new_user | couponIds=coupon-002 | couponQuantities=1
+  CHECK: ✓ | limitReceive✗
+--切到CDK兑换后--
+MODAL "新建活动"  SECTIONS: 基本信息 | 规则信息 | 发放内容
+  BUTTONS: ×[close-modal] | 自动发放[activity-trigger] | 主动领取[activity-trigger] | 手动发放[activity-trigger] | CDK兑换[activity-trigger] | 充值送券(disabled) | 取消[close-modal] | 保存草稿 | 发布活动[save-activity]
+  FIELDS: name= | type=new_customer | description= | input=(disabled) | input=(disabled) | qualificationKey=new_user | cdkBatchIds=cdk-001
+  CHECK: ✓ | limitReceive✗
+存草稿 → toast: 活动草稿已保存 | hash: #activity-other
+
+===[S5] 详情弹窗 → 编辑 → 复制并新建===
+MODAL "活动详情"  SECTIONS: 基本信息 | 规则信息 | 发放内容
+  BUTTONS: ×[close-modal] | 充值送券 | 自动发放(disabled) | 主动领取(disabled) | 手动发放(disabled) | CDK兑换(disabled) | −(disabled) | ＋(disabled) | −(disabled) | ＋(disabled) | 关闭[close-modal] | 编辑活动[activity-edit]
+  FIELDS: input=秋季充值回馈(disabled) | textarea=单笔充值支付成功后按最高档位赠送优惠券。(disabled) | input=2026-09-05(disabled) | input=2026-10-15(disabled) | select=全部顾客(disabled) | input=500(disabled) | select=秋季充值回馈券(disabled) | input=1(disabled) | select=充值赠15元(disabled) | input=1(disabled) | select=充值满300赠20(disabled) | input=1(disabled) | select=充值回流8折券(disabled) | input=1(disabled) | input=1(disabled)
+  CHECK: ✗(disabled) | ✓(disabled)
+详情弹窗底部按钮: 关闭[close-modal] | 编辑活动[activity-edit]
+
+===[S6] 行内操作：停用 / 启用 / 删除 / 复制===
+running 行操作: 详情,复制并新建,停用,详情,复制并新建,停用,详情,复制并新建,详情,复制并新建,停用,详情,复制并新建,详情,复制并新建,详情,复制并新建,停用,详情,复制并新建,删除,详情,复制并新建,启用,详情,复制并新建
+停用确认: 停用这个活动？停用后不会再触发新的发放，已到账券实例和历史记录不受影响。取消确认
+停用后 toast: 活动已停用，历史记录仍可查询 | 该行: 1秋季充值回馈¥500.00已停用2026/09/052026/10/154 个配置详情复制并新建启用
+存在启用按钮: true
+启用后 toast: 活动已启用
+草稿行存在删除按钮: true
+  !! 不存在: [data-action="other-activity-create"]
+  !! 不存在: #modal-root [data-action="close-modal"]
+
+===[S7] CDK管理列表===
+面包屑: 活动中心›活动管理中心›CDK管理 | 侧栏激活: ▣CDK管理
+工具栏: button{cdk-batch-create:＋ 新建CDK批次} input{q:} button{:查询} select{cdk-status:all}
+HEADS: 序号 | 批次名称 | 关联优惠券 | 关联活动 | 码模式 | 批次编号 | 核销进度 | 状态 | 创建时间 | 操作
+  ROWS(10):
+   1 ~ 新客首单礼·9月批次CDK-NEW-0901 ~ 新客首单减20 ~ 新客首单礼 ~ 共享码 ~ CDK-NEW-0901 ~ 62%312 / 500 ~ 生效中 ~ 2026/09/01 ~ 详情导出码列表暂停发放终止批次
+   2 ~ 周年庆回馈批次CDK-FEST-0910 ~ 周年庆立减30 ~ 主页领券专区 ~ 共享码 ~ CDK-FEST-0910 ~ 59%176 / 300 ~ 生效中 ~ 2026/09/10 ~ 详情导出码列表暂停发放终止批次
+   3 ~ 客服补偿专用批次CDK-CS-0908 ~ 客服补发满500减100 ~ 客服补偿活动 ~ 共享码 ~ CDK-CS-0908 ~ 38%38 / 100 ~ 生效中 ~ 2026/09/08 ~ 详情导出码列表暂停发放终止批次
+   4 ~ 秋季回流优惠批次CDK-RETURN-0904 ~ 充值回流8折券 ~ 老客回流礼 ~ 共享码 ~ CDK-RETURN-0904 ~ 100%200 / 200 ~ 已过期 ~ 2026/09/04 ~ 详情导出码列表暂停发放终止批次
+   5 ~ 国庆活动预发批次CDK-ND-1001 ~ 周年庆立减30 ~ 国庆回流券 ~ 共享码 ~ CDK-ND-1001 ~ 0%0 / 800 ~ 草稿 ~ 2026/09/14 ~ 详情导出码列表暂停发放终止批次
+   6 ~ 周末新客礼批次CDK-WE-0912 ~ 新客首单减20 ~ 周末新客礼 ~ 共享码 ~ CDK-WE-0912 ~ 34%88 / 260 ~ 生效中 ~ 2026/09/12 ~ 详情导出码列表暂停发放终止批次
+   7 ~ 会员专享兑换批次CDK-VIP-0906 ~ 满500减100 ~ 会员权益活动 ~ 唯一码 ~ CDK-VIP-0906 ~ 41%61 / 150 ~ 已停用 ~ 2026/09/06 ~ 详情导出码列表暂停发放终止批次
+   8 ~ 节日限定兑换批次CDK-HOLIDAY-0911 ~ 周年庆立减30 ~ 节日领券专区 ~ 唯一码 ~ CDK-HOLIDAY-0911 ~ 71%427 / 600 ~ 生效中 ~ 2026/09/11 ~ 详情导出码列表暂停发放终止批次
+   9 ~ 老客回流试用批次CDK-RETURN-0913 ~ 英雄联盟新客减30 ~ 老客回流礼 ~ 共享码 ~ CDK-RETURN-0913 ~ 14%17 / 120 ~ 已停用 ~ 2026/09/13 ~ 详情导出码列表暂停发放终止批次
+   10 ~ 月度领券活动批次CDK-MONTH-1001 ~ 首页主动领8折 ~ 月度主动领券 ~ 共享码 ~ CDK-MONTH-1001 ~ 0%0 / 400 ~ 草稿 ~ 2026/09/14 ~ 详情导出码列表暂停发放终止批次
+第1行操作: 详情[cdk-detail] | 导出码列表[cdk-export] | 暂停发放[cdk-pause] | 终止批次[cdk-terminate]
+
+===[S8] 新建CDK批次===
+MODAL "新建CDK批次"  SECTIONS: 新建CDK批次
+  BUTTONS: ×[close-modal] | −[cdk-adjust-number] | ＋[cdk-adjust-number] | ＋ 再加一张券[cdk-add-coupon] | 取消[close-modal] | 保存批次
+  FIELDS: name= | category=activity | codeMode=shared | specifiedCode= | totalRedeem=1 | validStart= | validEnd= | couponIds=coupon-001
+  CHECK: (无)
+空提交 → toast: 请填写批次名称
+保存 → toast: CDK批次已保存为草稿 | 列表首行: 1走查测试CDK批次CDK-NEW-0101新客首单减20待关联活动共享码CDK-NEW-01010%0 / 1草稿2026/09/14详情导出码列表暂停发放终止批次
+详情弹窗: CDK管理走查测试CDK批次CDK-NEW-0101 · 待关联活动×关联优惠券新客首单减20关联活动待关联活动码模式共享码批次状态草稿核销进度0%（0 / 1，剩余 1）创建时间2026/09/14有效期至2026/10/31知道了
+导出 toast: 已生成“走查测试CDK批次”的码列表导出任务
+暂停确认:  | 确认按钮: 0
+  !! 不存在: #modal-root [data-action="confirm-modal"]
+暂停后 toast: 已生成“走查测试CDK批次”的码列表导出任务 | 首行状态: 1走查测试CDK批次CDK-NEW-0101新客首单减20待关联活动共享码CDK-NEW-01010%0 / 1草稿2026/09/14详情导出码列表暂停发放终止批次
+
+===[S9] 入口与残留盘点===
+  #activities → activity-edit=0, activity-set-long-term=0, activity-add-coupon=0, activity-remove-coupon=0, activity-adjust-number=0, cdk-add-coupon=0, cdk-remove-coupon=0
+  #activity-other → activity-edit=0, activity-set-long-term=0, activity-add-coupon=0, activity-remove-coupon=0, activity-adjust-number=0, cdk-add-coupon=0, cdk-remove-coupon=0
+  #cdk-management → activity-edit=0, activity-set-long-term=0, activity-add-coupon=0, activity-remove-coupon=0, activity-adjust-number=0, cdk-add-coupon=0, cdk-remove-coupon=0
